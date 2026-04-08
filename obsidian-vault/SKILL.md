@@ -1,7 +1,7 @@
 ---
 name: obsidian-vault
 description: >
-  Obsidian vault layout, weekly note conventions, action item format, and git commit rules.
+  Obsidian vault layout, weekly note conventions, and action item format.
   Loaded automatically by skills that read or write to the vault.
   Use as background context when working with weekly notes or action items.
   For project conventions, see the projects skill.
