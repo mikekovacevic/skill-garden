@@ -51,21 +51,23 @@ fi
 installed=0
 for skill_path in "${skills[@]}"; do
   name=$(basename "$skill_path")
-  # Copy skill directory (excluding commands/)
-  mkdir -p "$INSTALL_DIR/$name"
-  find "$skill_path" -maxdepth 1 -type f -exec cp {} "$INSTALL_DIR/$name/" \;
-  echo "Installed: $name"
-  installed=$((installed + 1))
+  # Copy skill directory
+  rm -rf "$INSTALL_DIR/$name"
+  cp -r "$skill_path" "$INSTALL_DIR/$name"
 
-  # If skill has bundled commands, install those too
-  if [ -d "$skill_path/commands" ]; then
-    for cmd in "$skill_path"/commands/*.md; do
+  # If skill has bundled commands, install them as top-level slash commands
+  if [ -d "$INSTALL_DIR/$name/commands" ]; then
+    for cmd in "$INSTALL_DIR/$name"/commands/*.md; do
       [ -f "$cmd" ] || continue
       cmd_name=$(basename "$cmd" .md)
       cp "$cmd" "$INSTALL_DIR/$cmd_name.md"
       echo "  + command: /$cmd_name"
     done
+    rm -rf "$INSTALL_DIR/$name/commands"
   fi
+
+  echo "Installed: $name"
+  installed=$((installed + 1))
 done
 
 echo "---"
