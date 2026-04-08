@@ -44,8 +44,6 @@ Skills install to `~/.claude/commands/`. Bundled commands (e.g., `/project-list`
 | Skill | Description | Commands |
 |---|---|---|
 | [projects](projects/) | Project lifecycle: create, resume, save, list | `/project-list`, `/project-new`, `/project-resume`, `/project-save` |
-| [context-update](context-update/) | Finalize a working session and save project state | |
-| [context-handoff](context-handoff/) | End a session cleanly and prepare to resume later | |
 
 ### Productivity
 
