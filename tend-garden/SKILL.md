@@ -1,17 +1,17 @@
 ---
-name: publish
+name: tend-garden
 description: >
-  Publish public skills from a source repo to a skill garden. Validates all skills,
-  copies public ones, removes stale entries, and commits. Use when syncing a garden
-  repo after updating skills locally. Trigger on "publish skills", "sync garden",
-  "update garden", or "push to garden".
+  Tend your skill garden: validate skills against visibility rules, publish public skills
+  from a source repo, and clean stale entries. Use when syncing the garden after updating
+  skills locally. Trigger on "tend the garden", "publish skills", "sync garden", or
+  "validate skills".
 license: MIT
 metadata:
   visibility: public
   origin: self
 ---
 
-# Publish to Skill Garden
+# Tend the Garden
 
 Validate and publish public skills from your source repo to the garden.
 
@@ -19,7 +19,7 @@ Validate and publish public skills from your source repo to the garden.
 
 | Script | What it does |
 |---|---|
-| `scripts/publish.sh` | Full publish pipeline: validate, copy public skills, clean stale, commit |
+| `scripts/publish.sh` | Full pipeline: validate, copy public skills, clean stale, commit |
 | `scripts/validate.sh` | Lint validator for visibility-tier rules |
 
 ## Usage
@@ -27,7 +27,7 @@ Validate and publish public skills from your source repo to the garden.
 ### Publish all public skills
 
 ```bash
-./publish/scripts/publish.sh /path/to/your/skills /path/to/your/garden
+./tend/scripts/publish.sh /path/to/your/skills /path/to/your/garden
 ```
 
 The script will:
@@ -41,10 +41,10 @@ The script will:
 
 ```bash
 # Validate garden (flat layout)
-./publish/scripts/validate.sh /path/to/garden
+./tend/scripts/validate.sh /path/to/garden
 
 # Validate source repo (nested layout)
-./publish/scripts/validate.sh --source /path/to/skills
+./tend/scripts/validate.sh --source /path/to/skills
 ```
 
 ## Validation rules
@@ -57,4 +57,4 @@ The script will:
 
 ## Extending validation
 
-Edit `scripts/validate.sh` to add patterns. The `check_file` function runs grep-based checks per visibility tier. Add new patterns there.
+Edit `scripts/validate.sh` to add patterns. The `check_file` function runs grep-based checks per visibility tier.
