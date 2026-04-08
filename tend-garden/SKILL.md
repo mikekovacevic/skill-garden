@@ -42,7 +42,7 @@ REAL_USER_PATH = re.compile(r"/Users/[a-z]")
 PERSONAL_NAME = re.compile(r"\bMike\b")
 SLACK_ID = re.compile(r"\b[DUC][0-9][A-Z0-9]{7,9}\b")
 # Customize this pattern for your company's internal URLs
-COMPANY_URL = re.compile(r"yourcompany\.atlassian|internal-tool\.example", re.IGNORECASE)
+COMPANY_URL = re.compile(r"textnow\.atlassian|tn-data-catalog|enflick", re.IGNORECASE)
 
 RULES = {
     "public": ["user_path", "personal_name", "slack_id", "company_url"],
@@ -79,43 +79,40 @@ def validate(skills_dir):
     print(f"Validating skills in: {skills_dir}")
     print("---")
 
-    for category in sorted(skills_dir.iterdir()):
-        if not category.is_dir() or category.name in ("config", "lint"):
+    for skill_dir in sorted(skills_dir.iterdir()):
+        if not skill_dir.is_dir():
             continue
-        for skill_dir in sorted(category.iterdir()):
-            if not skill_dir.is_dir():
-                continue
-            skill_file = skill_dir / "SKILL.md"
-            if not skill_file.exists():
-                continue
+        skill_file = skill_dir / "SKILL.md"
+        if not skill_file.exists():
+            continue
 
-            checked += 1
-            name = skill_dir.name
-            visibility = extract_visibility(skill_file.read_text())
+        checked += 1
+        name = skill_dir.name
+        visibility = extract_visibility(skill_file.read_text())
 
-            if not visibility:
-                yellow(f"[{name}] WARN: no visibility field set")
-                continue
+        if not visibility:
+            yellow(f"[{name}] WARN: no visibility field set")
+            continue
 
-            files_to_check = [skill_file]
-            ref = skill_dir / "REFERENCE.md"
-            if ref.exists():
-                files_to_check.append(ref)
-            commands_dir = skill_dir / "commands"
-            if commands_dir.exists():
-                files_to_check.extend(commands_dir.glob("*.md"))
+        files_to_check = [skill_file]
+        ref = skill_dir / "REFERENCE.md"
+        if ref.exists():
+            files_to_check.append(ref)
+        commands_dir = skill_dir / "commands"
+        if commands_dir.exists():
+            files_to_check.extend(commands_dir.glob("*.md"))
 
-            errors = []
-            for f in files_to_check:
-                errors.extend(check_file(f, visibility))
+        errors = []
+        for f in files_to_check:
+            errors.extend(check_file(f, visibility))
 
-            if errors:
-                red(f"[{name}] ({visibility}) FAIL")
-                for line_num, rule, text in errors[:3]:
-                    red(f"  L{line_num}: {rule}")
-                total_errors += len(errors)
-            else:
-                green(f"[{name}] ({visibility}) PASS")
+        if errors:
+            red(f"[{name}] ({visibility}) FAIL")
+            for line_num, rule, text in errors[:3]:
+                red(f"  L{line_num}: {rule}")
+            total_errors += len(errors)
+        else:
+            green(f"[{name}] ({visibility}) PASS")
 
     print("---")
     print(f"Checked: {checked} skills")
