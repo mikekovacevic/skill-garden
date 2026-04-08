@@ -2,9 +2,7 @@
 
 Why "garden"? Because it's not a polished product or a rigid framework. It's a collection of skills I actually use, grown from real workflows, shared so others can browse, borrow, and adapt. Some are well-tended, some are experimental, and there may be a few weeds. Dig around, take what's useful, leave what isn't.
 
-Use at your own risk. No warranty, no SLA, no customer support. Just a person sharing what works for them.
-
-This is a curated set of [Claude Code](https://claude.ai/code) skills for productivity, communication, and daily workflows. Each skill is a self-contained directory with a `SKILL.md` file that Claude reads and executes. Some include bundled commands (slash commands) in a `commands/` subdirectory.
+Use at your own risk. No warranty, no SLA, no customer support. Just a person sharing what works for them. Built for [Claude Code](https://claude.ai/code).
 
 ## Install
 
