@@ -1,4 +1,4 @@
-Set up the Obsidian vault directory structure. Read `skills/productivity/obsidian-vault/SKILL.md` for the full convention first.
+Set up the Obsidian vault directory structure. Read `obsidian-vault/SKILL.md` for the full convention first.
 
 Check if `${VAULT_ROOT}` exists. If not, ask the user where they want the vault (default: `vault/` in the workspace root).
 

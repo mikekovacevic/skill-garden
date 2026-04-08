@@ -1,4 +1,4 @@
-Read `skills/productivity/obsidian-vault/SKILL.md` and `config/user-context.md` before proceeding.
+Read `obsidian-vault/SKILL.md` and `user-context/SKILL.md` before proceeding.
 
 Finalize the current working session for a project.
 

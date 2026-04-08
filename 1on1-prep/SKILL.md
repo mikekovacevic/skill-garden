@@ -6,6 +6,7 @@ argument-hint: "[person name]"
 metadata:
   visibility: public
   origin: self
+  tags: productivity
 ---
 
 # 1:1 Prep
@@ -15,8 +16,8 @@ Prepare a structured prep card for a 1:1 meeting with a specific person, or for 
 ## Before starting
 
 Read the following reference files:
-- config/user-context.md
-- skills/productivity/obsidian-vault/SKILL.md
+- user-context/SKILL.md
+- obsidian-vault/SKILL.md
 
 ## Identifying the person(s)
 

@@ -5,6 +5,7 @@ license: MIT
 metadata:
   visibility: public
   origin: self
+  tags: daily-workflow
 ---
 
 # Morning Briefing
@@ -14,8 +15,8 @@ You are the user's executive assistant. Run a morning briefing to set them up fo
 ## Before starting
 
 Read the following reference files:
-- config/user-context.md
-- skills/productivity/obsidian-vault/SKILL.md
+- user-context/SKILL.md
+- obsidian-vault/SKILL.md
 
 ## Read open action items
 
@@ -33,7 +34,7 @@ Check Outlook calendar for today's meetings. Exclude any events where you are th
 
 ## 1:1 prep
 
-Read `skills/productivity/1on1-prep/SKILL.md` and run it for any 1:1s detected on today's calendar.
+Read `1on1-prep/SKILL.md` and run it for any 1:1s detected on today's calendar.
 
 Identify 1:1s using these criteria:
 - Title contains `${USER_NAME}` AND exactly 2 attendees, OR

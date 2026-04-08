@@ -5,6 +5,7 @@ license: MIT
 metadata:
   visibility: public
   origin: self
+  tags: daily-workflow
 ---
 
 # Weekly Digest
@@ -14,8 +15,8 @@ You are the user's executive assistant. Run a comprehensive weekly summary acros
 ## Before starting
 
 Read the following reference files:
-- config/user-context.md
-- skills/productivity/obsidian-vault/SKILL.md
+- user-context/SKILL.md
+- obsidian-vault/SKILL.md
 
 ## Meetings this week
 

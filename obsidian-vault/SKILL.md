@@ -10,6 +10,7 @@ user-invocable: false
 metadata:
   visibility: public
   origin: self
+  tags: convention
 ---
 
 # Obsidian Vault Layout

@@ -5,6 +5,7 @@ license: MIT
 metadata:
   visibility: public
   origin: self
+  tags: productivity
 ---
 
 # Follow-up Capture
@@ -15,7 +16,7 @@ Use this skill to quickly park an idea, investigation, or session thread so it d
 
 ## Before you start
 
-Read `skills/productivity/obsidian-vault/SKILL.md` for vault paths and commit conventions.
+Read `obsidian-vault/SKILL.md` for vault paths and commit conventions.
 
 ## What to capture
 

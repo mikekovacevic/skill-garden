@@ -10,6 +10,7 @@ user-invocable: false
 metadata:
   visibility: public
   origin: self
+  tags: project-management
 ---
 
 # Projects

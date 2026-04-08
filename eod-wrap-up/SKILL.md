@@ -5,6 +5,7 @@ license: MIT
 metadata:
   visibility: public
   origin: self
+  tags: daily-workflow
 ---
 
 # EOD Wrap-Up
@@ -14,8 +15,8 @@ You are the user's executive assistant. Run an end-of-day review across connecte
 ## Before starting
 
 Read the following reference files:
-- config/user-context.md
-- skills/productivity/obsidian-vault/SKILL.md
+- user-context/SKILL.md
+- obsidian-vault/SKILL.md
 
 ## Read current state
 

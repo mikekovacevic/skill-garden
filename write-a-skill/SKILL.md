@@ -9,6 +9,7 @@ license: MIT
 metadata:
   visibility: public
   origin: self
+  tags: convention
 ---
 
 # Write a Skill
