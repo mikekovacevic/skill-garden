@@ -133,7 +133,7 @@ If validation fails, stop and fix the issues. Do not proceed to Step 2.
 
 For each skill with `visibility: public` in its metadata:
 
-1. Copy the skill directory to the garden repo (SKILL.md + commands/ + REFERENCE.md if present)
+1. Copy the skill directory to the garden repo (SKILL.md + commands/ + REFERENCE.md + templates/ if present)
 2. Skip skills with `visibility: internal` or `visibility: private`
 
 Then check the garden for stale skills (directories that exist in the garden but are no longer public in source). Remove them.
@@ -142,7 +142,30 @@ Then check the garden for stale skills (directories that exist in the garden but
 
 Run the same validation against the garden output. For the flat garden layout, every subdirectory with a SKILL.md is a skill (no category nesting).
 
-## Step 4: Commit
+## Step 4: Full repo sweep
+
+Before committing, scan **every file staged for commit** in the garden repo (not just SKILL.md) for sensitive content. This catches things the per-skill validation misses: README edits, examples, scripts, stray files.
+
+Use `git diff --cached --name-only` to get the list of files to scan. Read and check every one, regardless of file type.
+
+Scan for:
+
+| Pattern | What to catch |
+|---|---|
+| Absolute user paths | `/Users/<real-username>`, `/home/<real-username>` (skip placeholders like `/Users/you`) |
+| Personal names | Real first/last names of the repo owner or contributors |
+| Slack IDs | Real channel, user, or DM IDs (e.g. `D0*`, `U0*`, `C0*` patterns) |
+| Company names/URLs | Employer name, internal domains, Atlassian instances, org-specific URLs |
+| Email addresses | Real emails (skip obvious placeholders like `jane@company.com`) |
+| API keys/tokens | Any `key=`, `token=`, `secret=`, `password=` patterns with real values |
+| Internal hostnames | `*.internal`, `*.corp`, internal service names |
+| Internal tool references | References to company-specific tools, databases, or infrastructure |
+
+Skip lines that are **defining** validation regex patterns (the tend-garden skill itself). Use judgment on placeholder values in documentation.
+
+If real sensitive content is found, stop and fix before proceeding. Report all findings and let the user confirm before committing.
+
+## Step 5: Commit
 
 ```bash
 cd ${WORKSPACE_ROOT}/skill-garden
