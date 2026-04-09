@@ -2,7 +2,7 @@
 name: user-context
 description: >
   User identity and tool configuration that skills read for personalization.
-  Defines the expected fields in user-context/SKILL.md: name, role, timezone,
+  Defines the expected fields in config/user-context.md: name, role, timezone,
   connected tools, and signal rules. Loaded automatically by scheduled skills
   and any skill that needs to know who the user is.
 license: MIT
@@ -15,7 +15,7 @@ metadata:
 
 # User Context
 
-The user context file stores identity and tool configuration that other skills reference. Located at `user-context/SKILL.md`.
+The user context file stores identity and tool configuration that other skills reference. Located at `config/user-context.md`.
 
 ## Expected fields
 

@@ -248,7 +248,7 @@ Concise overview of what the video covers in 2-3 sentences, followed by a short 
 
 ### Recommendations for Me
 Actionable takeaways personalized to the user. Before writing this section, build context by reading:
-- `user-context/SKILL.md` for role, tools, and working style
+- `config/user-context.md` for role, tools, and working style
 - The vault's `CLAUDE.md` (at the vault root) for org structure, projects, and preferences
 - The project `CLAUDE.md` (workspace root) for current workflows and directory layout
 

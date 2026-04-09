@@ -1,0 +1,1 @@
+Read the skill file at `copy-to-clipboard/SKILL.md` and execute it for the following: $ARGUMENTS

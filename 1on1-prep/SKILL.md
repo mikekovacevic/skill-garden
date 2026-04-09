@@ -16,7 +16,7 @@ Prepare a structured prep card for a 1:1 meeting with a specific person, or for 
 ## Before starting
 
 Read the following reference files:
-- user-context/SKILL.md
+- config/user-context.md
 - obsidian-vault/SKILL.md
 
 ## Identifying the person(s)

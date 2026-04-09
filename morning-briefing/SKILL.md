@@ -15,7 +15,7 @@ You are the user's executive assistant. Run a morning briefing to set them up fo
 ## Before starting
 
 Read the following reference files:
-- user-context/SKILL.md
+- config/user-context.md
 - obsidian-vault/SKILL.md
 
 ## Read open action items

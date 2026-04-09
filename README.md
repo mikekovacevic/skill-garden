@@ -49,6 +49,7 @@ Skills install to `~/.claude/commands/`. Bundled commands (e.g., `/project-list`
 
 | Skill | Description | Commands |
 |---|---|---|
+| [copy-to-clipboard](copy-to-clipboard/) | Copy content to clipboard, bypassing terminal line wrapping | `/copy` |
 | [follow-up](follow-up/) | Quickly capture a follow-up item to revisit later | |
 | [1on1-prep](1on1-prep/) | Prepare for a 1:1 by pulling context from vault and connected tools | |
 | [youtube-transcript](youtube-transcript/) | Download, persist, and analyze YouTube video transcripts | `/youtube` |

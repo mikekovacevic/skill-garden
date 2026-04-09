@@ -15,7 +15,7 @@ You are the user's executive assistant. Run an end-of-day review across connecte
 ## Before starting
 
 Read the following reference files:
-- user-context/SKILL.md
+- config/user-context.md
 - obsidian-vault/SKILL.md
 
 ## Read current state

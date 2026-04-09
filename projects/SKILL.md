@@ -35,7 +35,7 @@ ${VAULT_ROOT}/projects/
   _index.md                          # Active project list (markdown table)
   [name]/
     context.md                       # Current state snapshot (max ~200 lines)
-    sessions/                        # Dated session logs (T1 only)
+    sessions/                        # Dated session logs (all tiers)
       YYYY-MM-DD.md
   archive/                           # Completed projects
 ```
@@ -44,8 +44,8 @@ ${VAULT_ROOT}/projects/
 
 A project can graduate from one phase to the next:
 
-- **investigation** - early-stage dig, may go nowhere or may graduate to T2/T1
-- **T2** - tracked context, progressed mostly through meetings. Has `context.md` only.
+- **investigation** - early-stage dig, may go nowhere or may graduate to T2/T1. Has `context.md` + `sessions/`.
+- **T2** - tracked context, progressed mostly through meetings. Has `context.md` + `sessions/`.
 - **T1** - active recurring work with multiple Claude Code sessions. Has `context.md` + `sessions/`.
 
 ## _index.md format

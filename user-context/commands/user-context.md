@@ -1,4 +1,4 @@
-Create or update the user context config file at `user-context/SKILL.md`.
+Create or update the user context config file at `config/user-context.md`.
 
 If the file already exists, read it first and show the current values. Ask what the user wants to update.
 
