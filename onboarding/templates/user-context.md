@@ -2,10 +2,10 @@
 
 ## Identity
 
-- **Name**: [YOUR FULL NAME]
-- **Email**: [YOUR EMAIL]
-- **Role**: [YOUR ROLE] at [YOUR COMPANY]
-- **Timezone**: [YOUR CITY / TIMEZONE e.g. Toronto / Eastern Time (ET)]. Always display calendar events and scheduled times in [TIMEZONE ABBREVIATION]. MCP tools return UTC — convert all times before presenting them.
+- **Name**: [YOUR_FULL_NAME]
+- **Email**: [YOUR_EMAIL]
+- **Role**: [YOUR_ROLE] at [YOUR_COMPANY]
+- **Timezone**: [YOUR_CITY_AND_TIMEZONE e.g. Toronto / Eastern Time (ET)]. Always display calendar events and scheduled times in [TIMEZONE_ABBREVIATION]. MCP tools return UTC - convert all times before presenting them.
 
 ## Connected Tools
 

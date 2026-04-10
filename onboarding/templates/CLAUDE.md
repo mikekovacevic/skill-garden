@@ -14,7 +14,7 @@ Claude will walk you through setting up your identity, Obsidian vault, MCP conne
 
 ## What gets set up
 
-- `config/user-context.md` — your identity, timezone, and connected tools
-- `vault/CLAUDE.md` — your org context, workflow, and preferences
-- `vault/projects/_index.md` — your active projects list
-- Scheduled tasks (morning briefing, EOD wrap-up, weekly digest) via launchd
+- `config/user-context.md` - your identity, timezone, and connected tools
+- `vault/CLAUDE.md` - your org context, workflow, and preferences
+- `vault/projects/_index.md` - your active projects list
+- Scheduled tasks (morning briefing, EOD wrap-up, weekly digest) via your OS scheduler (launchd on macOS, systemd/cron on Linux)
