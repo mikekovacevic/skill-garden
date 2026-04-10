@@ -6,18 +6,22 @@ Use at your own risk. No warranty, no SLA, no customer support. Just a person sh
 
 ## Install
 
+Skills and slash commands are separate things and go to separate directories:
+- **Skills** (SKILL.md directories) install to `~/claude/skills/`
+- **Slash commands** (bundled `.md` files) install to `.claude/commands/`
+
 ### One skill
 
 ```bash
 git clone https://github.com/mikekovacevic/skill-garden.git /tmp/skill-garden
-cp -r /tmp/skill-garden/morning-briefing ~/.claude/commands/
+cp -r /tmp/skill-garden/morning-briefing ~/claude/skills/
 rm -rf /tmp/skill-garden
 ```
 
 ### Using the install script
 
 ```bash
-# Install specific skills (includes bundled commands)
+# Install specific skills
 ./install.sh morning-briefing follow-up projects
 
 # Install all skills
@@ -25,9 +29,15 @@ rm -rf /tmp/skill-garden
 
 # List available skills
 ./install.sh --list
+
+# Custom install paths
+./install.sh --skills-dir ~/my-skills --commands-dir ~/.claude/commands morning-briefing
+
+# Add to a profile's active skills list
+./install.sh --profile personal morning-briefing
 ```
 
-Skills install to `~/.claude/commands/`. Bundled commands (e.g., `/project-list`, `/youtube`) are installed alongside automatically.
+Skills install to `~/claude/skills/` by default. Bundled commands (e.g., `/project-list`, `/youtube`) are extracted to `.claude/commands/` automatically.
 
 ## Skills
 
@@ -98,10 +108,18 @@ origin: self
 Skills with bundled commands include a `commands/` subdirectory:
 
 ```
-skill-name/
+skill-name/              # in the garden repo
   SKILL.md
   commands/
-    command-name.md     # installed as /command-name
+    command-name.md
+```
+
+After install, the skill and its commands are separated:
+
+```
+~/claude/skills/skill-name/     # skill directory
+  SKILL.md
+.claude/commands/command-name.md  # slash command (extracted)
 ```
 
 ## Attribution

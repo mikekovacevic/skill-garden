@@ -1,6 +1,8 @@
 ---
 name: eod-wrap-up
-description: "EOD Wrap-Up: Run an end-of-day review across Granola, email, Slack, and calendar. Updates the Obsidian weekly note with meeting notes and action items, then commits to git. Use this skill when you ask for an EOD summary, end of day wrap-up, daily review, or want to know what happened today and what's left open. Also trigger on 'wrap up my day', 'what did I miss today', 'EOD check-in', or 'close out the day'."
+description: >
+  End-of-day review across Granola, email, Slack, and calendar.
+  Updates the weekly note with meeting notes and action items.
 license: MIT
 metadata:
   visibility: public

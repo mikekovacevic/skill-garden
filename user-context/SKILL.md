@@ -2,9 +2,7 @@
 name: user-context
 description: >
   User identity and tool configuration that skills read for personalization.
-  Defines the expected fields in config/user-context.md: name, role, timezone,
-  connected tools, and signal rules. Loaded automatically by scheduled skills
-  and any skill that needs to know who the user is.
+  Defines the expected fields in config/user-context.md.
 license: MIT
 user-invocable: false
 metadata:

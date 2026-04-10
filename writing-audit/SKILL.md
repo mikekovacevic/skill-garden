@@ -1,7 +1,8 @@
 ---
 name: writing-audit
 description: >
-  Audit a document or piece of writing as an informed-but-not-expert reader. Use this skill when asked to review, audit, critique, or stress-test something written — a doc, RFC, Slack message, update, proposal, or any other written artifact. Trigger phrases: "audit this", "review this doc", "read this with fresh eyes", "does this make sense", "would this land", "is this clear", "check my writing", "writing audit", "does this follow BLUF". Also use when a document is pasted and the user asks if it's ready or good to send.
+  Audit a document as an informed-but-not-expert reader.
+  Use when asked to review, critique, or stress-test any written artifact.
 license: MIT
 metadata:
   visibility: public

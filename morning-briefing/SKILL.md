@@ -1,6 +1,8 @@
 ---
 name: morning-briefing
-description: "Morning Briefing: Run a daily morning briefing that checks calendar, email, Slack, and updates the Obsidian weekly note. Use this skill when you ask for a morning briefing, daily standup prep, or want to know what's on your plate for the day. Also trigger on 'what do I have today', 'morning update', 'prep my day', or 'what happened overnight'."
+description: >
+  Daily morning briefing: calendar, email, Slack, and weekly note update.
+  Use to see what's on your plate for the day.
 license: MIT
 metadata:
   visibility: public

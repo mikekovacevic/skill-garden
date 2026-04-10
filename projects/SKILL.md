@@ -1,10 +1,8 @@
 ---
 name: projects
 description: >
-  Project lifecycle management: creating, resuming, saving, and listing projects in the vault.
-  Defines project phases (investigation, T2, T1), context.md format, session logs, archiving,
-  and confidential project rules. Loaded automatically when working with projects.
-  Use when creating a project, resuming work, saving session state, or listing active projects.
+  Project lifecycle management: create, resume, save, and list projects in the vault.
+  Defines phases, context.md format, session logs, and archiving rules.
 license: MIT
 user-invocable: false
 metadata:

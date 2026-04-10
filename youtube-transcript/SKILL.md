@@ -1,12 +1,8 @@
 ---
 name: youtube-transcript
 description: >
-  Download a YouTube video transcript, persist it, and analyze it. Transcripts are saved
-  to TRANSCRIPT_DIR/{video-id}.md so they can be referenced in future sessions. If a transcript
-  already exists for a video ID, it is loaded from disk instead of re-downloaded.
-  Default output is a summary plus actionable recommendations relevant to the user's context.
-  Trigger: user pastes a YouTube URL, says "run this skill", "analyze this video",
-  "summarize this", or asks a follow-up about a previously saved video.
+  Download, persist, and analyze a YouTube video transcript.
+  Use when a YouTube URL is shared or video analysis is requested.
 license: MIT
 argument-hint: "[youtube URL]"
 metadata:

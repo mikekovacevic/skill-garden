@@ -1,6 +1,8 @@
 ---
 name: weekly-digest
-description: "Weekly Digest: Run a comprehensive weekly summary across Granola meetings, Jira, Slack, and calendar. Writes a retrospective to the weekly note. Use this skill when you ask for a weekly digest, week in review, weekly summary, or want to prep for the next week. Also trigger on 'how was my week', 'weekly recap', 'what happened this week', or 'prep for next week'."
+description: >
+  Weekly summary across Granola meetings, Jira, Slack, and calendar.
+  Writes a retrospective to the weekly note.
 license: MIT
 metadata:
   visibility: public

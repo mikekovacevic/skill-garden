@@ -2,9 +2,6 @@
 name: write-a-skill
 description: >
   Create, review, or lint agent skills following the directory-per-skill convention.
-  Use when creating a new skill, reviewing an existing skill's structure, linting a skill
-  against convention rules, or when asked to "write a skill", "create a skill", "lint this
-  skill", or "check skill structure".
 license: MIT
 metadata:
   visibility: public

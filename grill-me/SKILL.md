@@ -1,10 +1,8 @@
 ---
 name: grill-me
 description: >
-  Stress-test a plan or design by interviewing the user relentlessly, resolving each branch of the
-  decision tree one question at a time. Use when asked to "grill me", "poke holes in this",
-  "stress-test this plan", "challenge my design", or any request to critically examine a proposal
-  before committing to it.
+  Stress-test a plan or design by interviewing the user one question at a time.
+  Use when asked to grill, poke holes, or challenge a proposal.
 argument-hint: "[plan or design to stress-test]"
 license: MIT
 metadata:

@@ -1,6 +1,8 @@
 ---
 name: follow-up
-description: "Quickly capture a follow-up item — an idea, investigation, or Cowork session to revisit later. Use when wrapping up a session and want to park something without losing context, or any time mid-session when something comes up you don't want to forget. Trigger phrases: add a follow-up, log this for later, park this, I want to come back to this, remind me to look into, capture this as a follow-up, save this idea."
+description: >
+  Capture a follow-up item to revisit later without losing context.
+  Use when parking an idea mid-session or wrapping up with open threads.
 license: MIT
 metadata:
   visibility: public

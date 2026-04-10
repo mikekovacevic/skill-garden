@@ -1,6 +1,8 @@
 ---
 name: communication
-description: "Communication framework for drafting messages, docs, and verbal prep. Applies three techniques automatically: BLUF (lead with the point), Just-In-Time Context (give only what the audience needs right now), and Zoom In (explain depth by starting from shared understanding). Always active when drafting Slack messages, technical docs, RFCs, exec updates, or verbal talking points. Explicit trigger phrases: 'use BLUF', 'apply communication framework', 'draft this', 'help me write this', 'how should I explain this'."
+description: >
+  Communication framework: BLUF, Just-In-Time Context, and Zoom In.
+  Always active when drafting messages, docs, or verbal talking points.
 license: MIT
 metadata:
   visibility: public
@@ -126,6 +128,7 @@ These apply to all written output, always. No exceptions.
 
 - **No em dashes or double dashes.** Never use `—` or `--`. Rewrite the sentence instead.
 - **No AI-sounding filler.** Avoid "certainly", "absolutely", "great question", "it's worth noting that", "it's important to remember", "I hope this helps", "feel free to reach out", "don't hesitate to ask".
+- **No staccato sentence pairs.** Don't split one thought into two short punchy sentences to make a point (e.g. "This matters. Here's why." or "We shipped it. Users noticed."). That pattern reads like AI or LinkedIn. Join them naturally into one sentence. One thought, one sentence.
 - **Short bullets when listing.** One idea per line. No nested sub-bullets unless truly necessary.
 - **Conversational tone.** Write like a person, not a document. Avoid overly formal phrasing.
 

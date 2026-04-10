@@ -1,10 +1,7 @@
 ---
 name: tend-garden
 description: >
-  Tend your skill garden: validate skills against visibility rules, publish public skills
-  to the garden repo, and clean stale entries. Use when syncing the garden after updating
-  skills locally. Trigger on "tend the garden", "publish skills", "sync garden", or
-  "validate skills".
+  Validate skills against visibility rules and publish public skills to the garden repo.
 license: MIT
 metadata:
   visibility: public

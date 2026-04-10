@@ -1,6 +1,7 @@
 ---
 name: onboarding
-description: "Onboarding: Bootstrap a new Claude Code workspace from the template. Walk a new user through setting up their identity, vault, scheduled tasks, and MCP connections. Trigger on 'set me up', 'start onboarding', or 'bootstrap my workspace'."
+description: >
+  Bootstrap a new Claude Code workspace: identity, vault, scheduled tasks, and MCP connections.
 license: MIT
 metadata:
   visibility: public

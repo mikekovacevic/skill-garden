@@ -1,10 +1,7 @@
 ---
 name: copy-to-clipboard
 description: >
-  Copy content directly to the system clipboard, bypassing terminal line wrapping.
-  Use when the user says "copy this", "put that on my clipboard", "copy to clipboard",
-  "copy last response", or invokes /copy. Handles two modes: copying the last assistant
-  response from the current session, or generating new content and copying it directly.
+  Copy content to the system clipboard, bypassing terminal line wrapping.
 license: MIT
 argument-hint: "[prompt or 'last']"
 metadata:

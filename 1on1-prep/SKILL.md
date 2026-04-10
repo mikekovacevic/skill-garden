@@ -1,6 +1,7 @@
 ---
 name: 1on1-prep
-description: "1:1 Prep: Prepare for an upcoming 1:1 meeting by pulling context from the Obsidian vault, Granola notes, and Slack canvases in the DM with the person. Use when you ask to prep for a 1:1, 'get me ready for my 1:1 with X', or when called by the morning briefing upon detecting a 1:1 on today's calendar."
+description: >
+  Prepare for a 1:1 by pulling context from the vault, Granola, and Slack DMs.
 license: MIT
 argument-hint: "[person name]"
 metadata:
