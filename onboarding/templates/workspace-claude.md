@@ -2,12 +2,12 @@
 
 This is the root working directory for all Claude sessions.
 
-**Root path (on disk)**: `/Users/[YOUR_USERNAME]/claude`
+**Root path (on disk)**: `[YOUR_HOME_DIR]/claude`
 
 ## Directory Layout
 
 ```
-/Users/[YOUR_USERNAME]/claude/
+[YOUR_HOME_DIR]/claude/
   CLAUDE.md              - symlink to config/workspace-claude.md
   skills/                - Claude skills and reference docs
   vault/                 - Obsidian vault: notes, meetings, weekly logs
@@ -31,7 +31,7 @@ When working inside a repo subdirectory, save outputs within that repo. Ask befo
 
 ## Obsidian Vault
 
-Vault root: `/Users/[YOUR_USERNAME]/claude/vault`
+Vault root: `[YOUR_HOME_DIR]/claude/vault`
 
 Always read these reference files before working with the vault:
 - `obsidian-vault/SKILL.md` - layout, templates, git commit convention
