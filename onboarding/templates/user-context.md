@@ -9,13 +9,13 @@
 
 ## Connected Tools
 
-- **Calendar**: [Outlook / Google Calendar]
-- **Email**: [Outlook / Gmail]
-- **Chat**: [Slack / Teams]
-- **Meeting notes**: [Granola / Otter / manual]
-- **Project tracking**: [Jira / Linear / GitHub Issues]
-- **Notes**: Obsidian (see obsidian-vault.md reference)
-- **ATS**: [Lever / Greenhouse / Ashby / none] (hiring feedback)
+- **Calendar**: [CALENDAR_TOOL e.g. Outlook, Google Calendar]
+- **Email**: [EMAIL_TOOL e.g. Outlook, Gmail]
+- **Chat**: [CHAT_TOOL e.g. Slack, Teams]
+- **Meeting notes**: [MEETING_NOTES_TOOL e.g. Granola, Otter, manual]
+- **Project tracking**: [PROJECT_TRACKING_TOOL e.g. Jira, Linear, GitHub Issues, none]
+- **Notes**: Obsidian (see obsidian-vault skill for conventions)
+- **ATS**: [ATS_TOOL e.g. Lever, Greenhouse, Ashby, none]
 
 ## Slack Signal Rules
 

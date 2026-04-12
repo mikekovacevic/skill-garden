@@ -34,17 +34,16 @@ When working inside a repo subdirectory, save outputs within that repo. Ask befo
 Vault root: `[YOUR_HOME_DIR]/claude/vault`
 
 Always read these reference files before working with the vault:
-- `obsidian-vault/SKILL.md` - layout, templates, git commit convention
+- `skills/obsidian-vault/SKILL.md` - layout, templates, git commit convention
 - `config/user-context.md` - context about who you are and how you work
 
 ## Skills
 
-All user skills live in `skills/` and are git controlled. Each skill is a directory containing `SKILL.md` (required) and optional `REFERENCE.md`. Directory names are `kebab-case` within subdirectories (e.g. `productivity/`, `data/`, `infrastructure/`).
+Skills live in `skills/` and are auto-discovered via `.claude/skills/` (symlinked to `skills/`). Each skill is a directory containing `SKILL.md` with frontmatter that describes what it does and when to use it.
 
-**Always active** (load without being asked):
-- `communication/SKILL.md` - communication framework; applies to all drafting, messaging, and verbal prep
+Run `ls skills/*/SKILL.md` to see what's installed.
 
-For all other skills, read the relevant skill file before executing. Run `ls skills/*/` to see what's available.
+<!-- ALWAYS_ACTIVE: onboarding will populate this section -->
 
 ## Claude Desktop Config
 
@@ -61,4 +60,4 @@ Editing `claude_desktop_config.json` in this directory is sufficient - no need t
 
 When running as a scheduled task, read the skill file from `skills/`. The skill file will tell you which reference files to read first.
 
-For the full list of active tasks, schedules, file locations, and management commands, see `scheduled-tasks/SKILL.md`.
+The scheduled task scripts are in `.claude/scripts/`. Each runs `claude -p` with a prompt that loads the relevant skill.

@@ -62,10 +62,28 @@ Copy `onboarding/templates/workspace-claude.md` to `config/workspace-claude.md`.
 
 Replace all `[YOUR_USERNAME]` placeholders with the user's actual username from Step 2.
 
-Then create the symlink so CLAUDE.md in the root points to it:
+Then create symlinks:
 ```bash
 ln -sf config/workspace-claude.md CLAUDE.md
+ln -sf ../skills .claude/skills
 ```
+
+The first makes CLAUDE.md load from the config file. The second lets Claude Code auto-discover skills from their frontmatter.
+
+### Always-active skills
+
+Most skills are invoked on demand (Claude reads the description and decides when to load them). But some skills are frameworks you want applied to every response, not just when explicitly triggered.
+
+Ask the user: "Some skills work best when loaded in every session. For example, the `communication` skill applies a structured writing framework (BLUF, Just-In-Time Context, Zoom In) to everything Claude drafts. Would you like it always active? Are there any other skills you want loaded every session?"
+
+For each skill the user selects, add it to the `## Skills` section in `config/workspace-claude.md`:
+
+```markdown
+**Always read these without being asked:**
+- `skills/communication/SKILL.md`
+```
+
+If the user doesn't want any always-active skills, leave this section out.
 
 ---
 
