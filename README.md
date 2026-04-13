@@ -6,38 +6,51 @@ Use at your own risk. No warranty, no SLA, no customer support. Just a person sh
 
 ## Install
 
-Skills and slash commands are separate things and go to separate directories:
-- **Skills** (SKILL.md directories) install to `~/claude/skills/`
-- **Slash commands** (bundled `.md` files) install to `.claude/commands/`
+Skills are **symlinked** from the garden repo, not copied. This means `git pull` in the garden automatically updates all installed skills.
 
-### One skill
+### Recommended: clone and install
 
 ```bash
-git clone https://github.com/mikekovacevic/skill-garden.git /tmp/skill-garden
-cp -r /tmp/skill-garden/morning-briefing ~/claude/skills/
-rm -rf /tmp/skill-garden
+cd ~/claude
+git clone https://github.com/mikekovacevic/skill-garden.git
+
+# Install all skills (creates symlinks into ~/claude/skills/)
+cd skill-garden
+./install.sh --all
 ```
 
-### Using the install script
+This creates:
+- `~/claude/skills/<name>` -> `~/claude/skill-garden/<name>` (symlink per skill)
+- `~/claude/.claude/commands/<name>.md` -> bundled slash commands (symlinked)
+- `~/claude/.claude/skills` -> `~/claude/skills` (auto-discovery symlink for Claude Code)
+
+### Updating
 
 ```bash
-# Install specific skills
-./install.sh morning-briefing follow-up projects
+cd ~/claude/skill-garden
+git pull
+```
 
-# Install all skills
-./install.sh --all
+That's it. Symlinks mean installed skills update automatically.
+
+### Install specific skills
+
+```bash
+./install.sh morning-briefing follow-up projects
 
 # List available skills
 ./install.sh --list
-
-# Custom install paths
-./install.sh --skills-dir ~/my-skills --commands-dir ~/.claude/commands morning-briefing
-
-# Add to a profile's active skills list
-./install.sh --profile personal morning-briefing
 ```
 
-Skills install to `~/claude/skills/` by default. Bundled commands (e.g., `/project-list`, `/youtube`) are extracted to `.claude/commands/` automatically.
+### Full workspace setup (new users)
+
+After installing, run the onboarding skill to set up your identity, vault, and scheduled tasks:
+
+```bash
+cd ~/claude
+claude
+# Then say: "Run the onboarding skill"
+```
 
 ## Skills
 
