@@ -112,8 +112,15 @@ for skill_path in "${skills[@]}"; do
   name=$(basename "$skill_path")
   target="$SKILLS_INSTALL_DIR/$name"
 
-  # Remove existing (symlink or directory) and create symlink
-  rm -rf "$target"
+  # Safety check: don't destroy non-symlink directories (could be private skills)
+  if [ -e "$target" ] && [ ! -L "$target" ]; then
+    echo "  SKIP: $name (existing directory at $target is not a symlink)"
+    echo "        Remove it manually if you want to replace it with the garden version."
+    continue
+  fi
+
+  # Remove existing symlink and create new one
+  rm -f "$target"
   ln -sf "$skill_path" "$target"
 
   # Install bundled commands (symlink each command file)
@@ -121,7 +128,14 @@ for skill_path in "${skills[@]}"; do
     for cmd in "$skill_path"/commands/*.md; do
       [ -f "$cmd" ] || continue
       cmd_name=$(basename "$cmd" .md)
-      ln -sf "$cmd" "$COMMANDS_INSTALL_DIR/$cmd_name.md"
+      cmd_target="$COMMANDS_INSTALL_DIR/$cmd_name.md"
+      # Same safety check for commands
+      if [ -e "$cmd_target" ] && [ ! -L "$cmd_target" ]; then
+        echo "  SKIP command: /$cmd_name (existing file is not a symlink)"
+        continue
+      fi
+      rm -f "$cmd_target"
+      ln -sf "$cmd" "$cmd_target"
       echo "  + command: /$cmd_name"
     done
   fi
