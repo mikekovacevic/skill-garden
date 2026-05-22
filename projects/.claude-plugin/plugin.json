@@ -1,0 +1,9 @@
+{
+  "name": "projects",
+  "version": "0.1.0",
+  "description": "Project lifecycle management: create, resume, save, and list projects in the vault.",
+  "author": {
+    "name": "Mike Kovacevic",
+    "url": "https://github.com/mikekovacevic"
+  }
+}

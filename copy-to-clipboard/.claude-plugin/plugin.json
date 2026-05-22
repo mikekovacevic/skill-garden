@@ -1,0 +1,9 @@
+{
+  "name": "copy-to-clipboard",
+  "version": "0.1.0",
+  "description": "Copy content to the system clipboard, bypassing terminal line wrapping.",
+  "author": {
+    "name": "Mike Kovacevic",
+    "url": "https://github.com/mikekovacevic"
+  }
+}

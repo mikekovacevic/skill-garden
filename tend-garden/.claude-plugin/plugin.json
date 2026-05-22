@@ -1,0 +1,9 @@
+{
+  "name": "tend-garden",
+  "version": "0.1.0",
+  "description": "Validate and commit changes to the skill garden repo.",
+  "author": {
+    "name": "Mike Kovacevic",
+    "url": "https://github.com/mikekovacevic"
+  }
+}

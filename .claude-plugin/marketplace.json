@@ -1,0 +1,109 @@
+{
+  "name": "skill-garden",
+  "owner": {
+    "name": "Mike Kovacevic",
+    "url": "https://github.com/mikekovacevic"
+  },
+  "metadata": {
+    "description": "A curated collection of Claude Code skills for productivity, communication, and daily workflows.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "1on1-prep",
+      "source": "./1on1-prep",
+      "description": "Prepare for a 1:1 by pulling context from the vault, Granola, and Slack DMs.",
+      "category": "productivity"
+    },
+    {
+      "name": "communication",
+      "source": "./communication",
+      "description": "Communication framework: BLUF, Just-In-Time Context, and Zoom In. Always active when drafting messages, docs, or verbal talking points.",
+      "category": "productivity"
+    },
+    {
+      "name": "copy-to-clipboard",
+      "source": "./copy-to-clipboard",
+      "description": "Copy content to the system clipboard, bypassing terminal line wrapping.",
+      "category": "productivity"
+    },
+    {
+      "name": "eod-wrap-up",
+      "source": "./eod-wrap-up",
+      "description": "End-of-day review across Granola, email, Slack, and calendar. Updates the weekly note with meeting notes and action items.",
+      "category": "productivity"
+    },
+    {
+      "name": "follow-up",
+      "source": "./follow-up",
+      "description": "Capture a follow-up item to revisit later without losing context.",
+      "category": "productivity"
+    },
+    {
+      "name": "grill-me",
+      "source": "./grill-me",
+      "description": "Stress-test a plan or design by interviewing the user one question at a time.",
+      "category": "productivity"
+    },
+    {
+      "name": "morning-briefing",
+      "source": "./morning-briefing",
+      "description": "Daily morning briefing: calendar, email, Slack, and weekly note update.",
+      "category": "productivity"
+    },
+    {
+      "name": "obsidian-vault",
+      "source": "./obsidian-vault",
+      "description": "Obsidian vault layout, weekly note conventions, and action item format.",
+      "category": "productivity"
+    },
+    {
+      "name": "onboarding",
+      "source": "./onboarding",
+      "description": "Bootstrap a new Claude Code workspace: identity, vault, scheduled tasks, and MCP connections.",
+      "category": "productivity"
+    },
+    {
+      "name": "projects",
+      "source": "./projects",
+      "description": "Project lifecycle management: create, resume, save, and list projects in the vault.",
+      "category": "productivity"
+    },
+    {
+      "name": "tend-garden",
+      "source": "./tend-garden",
+      "description": "Validate and commit changes to the skill garden repo.",
+      "category": "productivity"
+    },
+    {
+      "name": "user-context",
+      "source": "./user-context",
+      "description": "User identity and tool configuration that skills read for personalization.",
+      "category": "productivity"
+    },
+    {
+      "name": "weekly-digest",
+      "source": "./weekly-digest",
+      "description": "Weekly summary across Granola meetings, Jira, Slack, and calendar. Writes a retrospective to the weekly note.",
+      "category": "productivity"
+    },
+    {
+      "name": "write-a-skill",
+      "source": "./write-a-skill",
+      "description": "Create, review, or lint agent skills following the directory-per-skill convention.",
+      "category": "productivity"
+    },
+    {
+      "name": "writing-audit",
+      "source": "./writing-audit",
+      "description": "Audit a document as an informed-but-not-expert reader.",
+      "category": "productivity"
+    },
+    {
+      "name": "youtube-transcript",
+      "source": "./youtube-transcript",
+      "description": "Download, persist, and analyze a YouTube video transcript.",
+      "category": "productivity"
+    }
+  ]
+}

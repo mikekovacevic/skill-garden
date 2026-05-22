@@ -1,0 +1,9 @@
+{
+  "name": "communication",
+  "version": "0.1.0",
+  "description": "Communication framework: BLUF, Just-In-Time Context, and Zoom In. Always active when drafting messages, docs, or verbal talking points.",
+  "author": {
+    "name": "Mike Kovacevic",
+    "url": "https://github.com/mikekovacevic"
+  }
+}

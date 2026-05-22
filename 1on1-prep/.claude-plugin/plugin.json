@@ -1,0 +1,9 @@
+{
+  "name": "1on1-prep",
+  "version": "0.1.0",
+  "description": "Prepare for a 1:1 by pulling context from the vault, Granola, and Slack DMs.",
+  "author": {
+    "name": "Mike Kovacevic",
+    "url": "https://github.com/mikekovacevic"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "write-a-skill",
+  "version": "0.1.0",
+  "description": "Create, review, or lint agent skills following the directory-per-skill convention.",
+  "author": {
+    "name": "Mike Kovacevic",
+    "url": "https://github.com/mikekovacevic"
+  }
+}

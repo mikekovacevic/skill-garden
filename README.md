@@ -6,51 +6,44 @@ Use at your own risk. No warranty, no SLA, no customer support. Just a person sh
 
 ## Install
 
-Skills are **symlinked** from the garden repo, not copied. This means `git pull` in the garden automatically updates all installed skills.
+Skill Garden is a [Claude Code plugin marketplace](https://docs.claude.com/en/docs/claude-code/plugins). Add the marketplace once, then install only the skills you want.
 
-### Recommended: clone and install
-
-```bash
-cd ~/claude
-git clone https://github.com/mikekovacevic/skill-garden.git
-
-# Install all skills (creates symlinks into ~/claude/skills/)
-cd skill-garden
-./install.sh --all
+```
+/plugin marketplace add mikekovacevic/skill-garden
+/plugin install morning-briefing@skill-garden
+/plugin install follow-up@skill-garden
 ```
 
-This creates:
-- `~/claude/skills/<name>` -> `~/claude/skill-garden/<name>` (symlink per skill)
-- `~/claude/.claude/commands/<name>.md` -> bundled slash commands (symlinked)
-- `~/claude/.claude/skills` -> `~/claude/skills` (auto-discovery symlink for Claude Code)
+Or open the interactive picker:
+
+```
+/plugin
+```
 
 ### Updating
 
-```bash
-cd ~/claude/skill-garden
-git pull
+```
+/plugin marketplace update skill-garden
 ```
 
-That's it. Symlinks mean installed skills update automatically.
+### Uninstall a skill
 
-### Install specific skills
-
-```bash
-./install.sh morning-briefing follow-up projects
-
-# List available skills
-./install.sh --list
+```
+/plugin uninstall <name>@skill-garden
 ```
 
 ### Full workspace setup (new users)
 
 After installing, run the onboarding skill to set up your identity, vault, and scheduled tasks:
 
-```bash
-cd ~/claude
-claude
-# Then say: "Run the onboarding skill"
 ```
+/plugin install onboarding@skill-garden
+# Then in any Claude Code session: "Run the onboarding skill"
+```
+
+### Legacy install (symlink-based)
+
+The original `install.sh` still works for users who prefer symlinks over the plugin system. Clone the repo and run `./install.sh --all` (or `--list`, or individual skill names) to symlink skills into `~/claude/skills/`. Re-run after `git pull`. The plugin marketplace is the recommended path.
 
 ## Skills
 
@@ -104,35 +97,35 @@ Skills use variables instead of hardcoded paths. Define these in your `CLAUDE.md
 | `${SLACK_DM_CHANNEL}` | Your Slack DM channel ID | `D01ABCDEF` |
 | `${USER_NAME}` | Your first name (for calendar matching) | `Jane` |
 
+## Repo layout
+
+Each skill is its own plugin under a directory at the repo root:
+
+```
+skill-garden/
+├── .claude-plugin/marketplace.json    # marketplace manifest
+├── morning-briefing/
+│   ├── .claude-plugin/plugin.json     # plugin manifest
+│   └── skills/morning-briefing/SKILL.md
+├── projects/
+│   ├── .claude-plugin/plugin.json
+│   ├── skills/projects/SKILL.md
+│   └── commands/                       # bundled slash commands
+│       ├── project-list.md
+│       └── ...
+└── ...
+```
+
 ## Skill format
 
-Each skill follows the [Agent Skills](https://agentskills.io) spec with extensions. See [write-a-skill](write-a-skill/) for the full convention.
+Each skill follows the [Agent Skills](https://agentskills.io) spec. See [write-a-skill](write-a-skill/) for the authoring convention.
 
 ```yaml
 ---
 name: skill-name
 description: >
   What it does. Use when [trigger phrases].
-visibility: public
-origin: self
 ---
-```
-
-Skills with bundled commands include a `commands/` subdirectory:
-
-```
-skill-name/              # in the garden repo
-  SKILL.md
-  commands/
-    command-name.md
-```
-
-After install, the skill and its commands are separated:
-
-```
-~/claude/skills/skill-name/     # skill directory
-  SKILL.md
-.claude/commands/command-name.md  # slash command (extracted)
 ```
 
 ## Attribution
