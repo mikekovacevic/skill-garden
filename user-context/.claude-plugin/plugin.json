@@ -1,0 +1,9 @@
+{
+  "name": "user-context",
+  "version": "0.1.0",
+  "description": "User identity and tool configuration that skills read for personalization.",
+  "author": {
+    "name": "Mike Kovacevic",
+    "url": "https://github.com/mikekovacevic"
+  }
+}

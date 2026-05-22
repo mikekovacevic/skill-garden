@@ -66,11 +66,21 @@ if [ $# -eq 0 ]; then
 fi
 
 is_skill() {
-  [ -f "$1/SKILL.md" ]
+  # Plugin layout: <plugin>/skills/<name>/SKILL.md
+  local name
+  name=$(basename "${1%/}")
+  [ -f "$1/skills/$name/SKILL.md" ]
+}
+
+skill_md_path() {
+  local name
+  name=$(basename "${1%/}")
+  echo "$1/skills/$name/SKILL.md"
 }
 
 get_description() {
-  local skill_file="$1/SKILL.md"
+  local skill_file
+  skill_file=$(skill_md_path "$1")
   sed -n '/^description:/,/^[a-z]/p' "$skill_file" | head -2 | tail -1 | sed 's/^ *//'
 }
 
@@ -120,8 +130,9 @@ for skill_path in "${skills[@]}"; do
   fi
 
   # Remove existing symlink and create new one
+  # Skill content lives at <plugin>/skills/<name>/ in the plugin layout
   rm -f "$target"
-  ln -sf "$skill_path" "$target"
+  ln -sf "${skill_path%/}/skills/$name" "$target"
 
   # Install bundled commands (symlink each command file)
   if [ -d "$skill_path/commands" ]; then

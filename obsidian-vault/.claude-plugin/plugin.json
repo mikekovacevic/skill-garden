@@ -1,0 +1,9 @@
+{
+  "name": "obsidian-vault",
+  "version": "0.1.0",
+  "description": "Obsidian vault layout, weekly note conventions, and action item format.",
+  "author": {
+    "name": "Mike Kovacevic",
+    "url": "https://github.com/mikekovacevic"
+  }
+}

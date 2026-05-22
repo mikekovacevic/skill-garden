@@ -1,0 +1,9 @@
+{
+  "name": "morning-briefing",
+  "version": "0.1.0",
+  "description": "Daily morning briefing: calendar, email, Slack, and weekly note update.",
+  "author": {
+    "name": "Mike Kovacevic",
+    "url": "https://github.com/mikekovacevic"
+  }
+}

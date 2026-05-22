@@ -1,0 +1,9 @@
+{
+  "name": "onboarding",
+  "version": "0.1.0",
+  "description": "Bootstrap a new Claude Code workspace: identity, vault, scheduled tasks, and MCP connections.",
+  "author": {
+    "name": "Mike Kovacevic",
+    "url": "https://github.com/mikekovacevic"
+  }
+}

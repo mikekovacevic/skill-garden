@@ -1,0 +1,9 @@
+{
+  "name": "weekly-digest",
+  "version": "0.1.0",
+  "description": "Weekly summary across Granola meetings, Jira, Slack, and calendar. Writes a retrospective to the weekly note.",
+  "author": {
+    "name": "Mike Kovacevic",
+    "url": "https://github.com/mikekovacevic"
+  }
+}

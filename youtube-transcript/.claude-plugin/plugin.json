@@ -1,0 +1,9 @@
+{
+  "name": "youtube-transcript",
+  "version": "0.1.0",
+  "description": "Download, persist, and analyze a YouTube video transcript.",
+  "author": {
+    "name": "Mike Kovacevic",
+    "url": "https://github.com/mikekovacevic"
+  }
+}

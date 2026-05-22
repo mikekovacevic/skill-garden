@@ -1,0 +1,9 @@
+{
+  "name": "writing-audit",
+  "version": "0.1.0",
+  "description": "Audit a document as an informed-but-not-expert reader.",
+  "author": {
+    "name": "Mike Kovacevic",
+    "url": "https://github.com/mikekovacevic"
+  }
+}

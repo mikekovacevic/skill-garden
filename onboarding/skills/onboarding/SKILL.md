@@ -27,7 +27,7 @@ Estimated time: 20-30 minutes.
 
 ## Step 1 - Identity file
 
-Copy `onboarding/templates/user-context.md` to `config/user-context.md`.
+Copy `${CLAUDE_PLUGIN_ROOT}/templates/user-context.md` to `config/user-context.md`.
 
 Ask the user for:
 - Full name
@@ -42,7 +42,7 @@ Fill in the placeholders and write the file. Show them the result.
 
 ## Step 2 - Vault identity file
 
-Copy `onboarding/templates/vault-claude.md` to `vault/CLAUDE.md`.
+Copy `${CLAUDE_PLUGIN_ROOT}/templates/vault-claude.md` to `vault/CLAUDE.md`.
 
 Ask the user for:
 - Their home directory username (e.g. `/Users/jane`)
@@ -58,7 +58,7 @@ Fill in the placeholders and write the file.
 
 ## Step 3 - Workspace CLAUDE.md
 
-Copy `onboarding/templates/workspace-claude.md` to `config/workspace-claude.md`.
+Copy `${CLAUDE_PLUGIN_ROOT}/templates/workspace-claude.md` to `config/workspace-claude.md`.
 
 Replace all `[YOUR_USERNAME]` placeholders with the user's actual username from Step 2.
 
@@ -144,7 +144,7 @@ Confirm with the user:
 Copy the scripts from templates and make them executable:
 ```bash
 mkdir -p .claude/scripts
-cp onboarding/templates/run-*.sh .claude/scripts/
+cp ${CLAUDE_PLUGIN_ROOT}/templates/run-*.sh .claude/scripts/
 chmod +x .claude/scripts/*.sh
 ```
 

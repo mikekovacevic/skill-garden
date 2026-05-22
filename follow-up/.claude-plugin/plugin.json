@@ -1,0 +1,9 @@
+{
+  "name": "follow-up",
+  "version": "0.1.0",
+  "description": "Capture a follow-up item to revisit later without losing context.",
+  "author": {
+    "name": "Mike Kovacevic",
+    "url": "https://github.com/mikekovacevic"
+  }
+}

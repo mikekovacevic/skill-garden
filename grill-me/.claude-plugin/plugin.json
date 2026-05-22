@@ -1,0 +1,9 @@
+{
+  "name": "grill-me",
+  "version": "0.1.0",
+  "description": "Stress-test a plan or design by interviewing the user one question at a time.",
+  "author": {
+    "name": "Mike Kovacevic",
+    "url": "https://github.com/mikekovacevic"
+  }
+}
