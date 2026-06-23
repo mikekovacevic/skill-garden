@@ -30,7 +30,7 @@
     {
       "name": "eod-wrap-up",
       "source": "./eod-wrap-up",
-      "description": "End-of-day review across Granola, email, Slack, and calendar. Updates the weekly note with meeting notes and action items.",
+      "description": "End-of-day review across Granola meetings, Outlook email, Slack, and tomorrow's calendar. Fully self-contained: no other skills, config, or vault required.",
       "category": "productivity"
     },
     {
@@ -48,7 +48,7 @@
     {
       "name": "morning-briefing",
       "source": "./morning-briefing",
-      "description": "Daily morning briefing: calendar, email, Slack, and weekly note update.",
+      "description": "Morning briefing across calendar, overnight email and Slack, with light 1:1 prep. Fully self-contained: no other skills, config, or vault required.",
       "category": "productivity"
     },
     {

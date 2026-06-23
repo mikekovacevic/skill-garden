@@ -51,8 +51,8 @@ The original `install.sh` still works for users who prefer symlinks over the plu
 
 | Skill | Description | Commands |
 |---|---|---|
-| [morning-briefing](morning-briefing/) | Daily briefing: calendar, email, Slack, weekly note update | |
-| [eod-wrap-up](eod-wrap-up/) | End-of-day review across meeting notes, email, Slack, calendar | |
+| [morning-briefing](morning-briefing/) | Self-contained morning briefing: calendar, overnight email & Slack, light 1:1 prep | |
+| [eod-wrap-up](eod-wrap-up/) | Self-contained end-of-day review across meetings, email, Slack, tomorrow's calendar | |
 | [weekly-digest](weekly-digest/) | Weekly summary across meetings, project tracking, Slack, calendar | |
 
 ### Project management

@@ -1,8 +1,9 @@
 ---
 name: morning-briefing
 description: >
-  Daily morning briefing: calendar, email, Slack, and weekly note update.
-  Use to see what's on your plate for the day.
+  Morning briefing across calendar, overnight email and Slack, with light
+  1:1 prep for today's one-on-ones. Produces a written briefing. Fully
+  self-contained — needs no other skills, config files, or vault.
 license: MIT
 metadata:
   visibility: public
@@ -12,102 +13,60 @@ metadata:
 
 # Morning Briefing
 
-You are the user's executive assistant. Run a morning briefing to set them up for the day, then update their weekly note in Obsidian.
+You are the user's executive assistant. Run a morning briefing to set them up for the day and produce a clean, scannable written summary.
 
-## Before starting
+This skill is fully self-contained. It does not read any other skill, config file, or vault, and it does not write anything unless the user asks. Everything it needs is below.
 
-Read the following reference files:
-- config/user-context.md
-- obsidian-vault/SKILL.md
+## Configure (one line)
 
-## Read open action items
+- **Your name:** `Your Name` — used only to spot your 1:1s on the calendar. Set this to your own name before running.
 
-Read the weekly note and check for any open action items from previous days. Note anything overdue or carried forward.
+## 1. Today's calendar
 
-## Project health check
+Check Outlook calendar for today's meetings. Exclude events where you're the only attendee (focus blocks, holds, personal time). For each real meeting note the time, title, and any prep worth doing first.
 
-Read `${VAULT_ROOT}/projects/_index.md`. For each active project, check the date field. Flag any project where the date is more than 30 days ago as stale. Collect stale projects for inclusion in the briefing output. If no projects are stale, omit the Projects section entirely.
+## 2. Light 1:1 prep
 
-## Today's calendar
+Find today's 1:1s on the calendar — a meeting is a 1:1 if it has exactly two attendees including you, or the title matches `[Name] / Your Name` or `Your Name / [Name]`.
 
-Check Outlook calendar for today's meetings. Exclude any events where you are the only attendee (focus blocks, holds, personal blocks, etc.) — only include meetings with at least one other person. For each included meeting note:
-- Time and title
-- Any prep you should do before it
+For each 1:1, build a short prep card without needing any other skill:
+- Query Granola for recent meetings with that person (last ~30 days) — pull decisions, open action items, and anything flagged but not resolved.
+- Optionally check your recent Slack DMs with them for open threads.
+- Produce 3 short sections: **Discuss** (agenda), **Close** (follow-ups outstanding), **Context** (recent themes or wins worth noting).
 
-## 1:1 prep
+If there are no 1:1s today, skip this section.
 
-Read `1on1-prep/SKILL.md` and run it for any 1:1s detected on today's calendar.
+## 3. Overnight email
 
-Identify 1:1s using these criteria:
-- Title contains `${USER_NAME}` AND exactly 2 attendees, OR
-- Title matches patterns like `[Name] / ${USER_NAME}` or `${USER_NAME} / [Name]`
+Check Outlook for unread email since yesterday evening. Flag anything urgent or time-sensitive.
 
-For each 1:1 found, run the full 1on1-prep skill and collect the prep card(s). These will be included in the final output under `### 1:1 Prep`. If no 1:1s are on the calendar today, skip this step.
+## 4. Overnight Slack
 
-## Email overnight
+Check Slack for DMs or threads mentioning you that came in overnight and haven't been replied to.
 
-Check Outlook for unread emails that arrived since yesterday EOD. Flag anything urgent or time-sensitive.
+## 5. Set the focus
 
-## Slack overnight
+From the above, infer the top 2-3 priorities for today — pull from a heavy calendar, urgent threads, or anything time-sensitive. Keep it to 2-3, not a dump.
 
-Check Slack for any DMs or threads mentioning you that came in overnight and haven't been replied to.
+## 6. Present the briefing
 
-## Update the weekly note
+Output a scannable morning briefing:
 
-The weekly note uses **reverse chronological order** — the most recent day is at the top, just below the Open Action Items block.
-
-If today's section does not yet exist in the file:
-- Create a new day section (Focus, Agenda, Notes, Action Items with placeholders)
-- Insert it at the TOP of the day sections, immediately after the `---` that follows the Open Action Items block
-- Do NOT create sections for future days
-
-If today's section already exists, find it and update:
-- **Focus**: Replace the placeholder with the top 2-3 priorities for today. Determine priorities from: yesterday's incomplete action items (carryover), today's calendar (what's heavy or important), any urgent Slack threads. Keep it to 2-3 items max.
-- **Agenda**: Replace the placeholder with today's meetings in chronological order. Exclude self-only calendar blocks.
-
-IMPORTANT: Do NOT touch the "### Action Items" or "### Notes" sections if they already have content. Only replace HTML comment placeholders.
-
-If the weekly file doesn't exist, create it with only today's section (plus Weekly Retrospective at the bottom). See obsidian-vault.md reference for template and rules.
-
-## Commit to git
-
-Commit vault changes per the git convention in obsidian-vault.md.
-
-## Check open follow-ups
-
-Read `${VAULT_ROOT}/follow-ups.md` if it exists. Surface any open items (under `## Open`) in the briefing. If there are none, omit the section entirely.
-
-## Present the morning briefing
-
-Output a scannable summary:
 - **Focus** — top 2-3 priorities for the day
 - **Today's agenda** — meetings in order with any prep flags
-- **1:1 Prep** — one prep card per 1:1 detected today (omit section if none)
-- **Overnight email/Slack** — anything urgent that needs a response
-- **Due today** — any action items with today's due date
-- **Follow-ups** — open items from follow-ups.md (omit section if none)
-- **Projects** — any active projects not updated in 30+ days, flagged as stale (omit section if none)
+- **1:1 prep** — one short card per 1:1 today (omit if none)
+- **Overnight** — urgent email or Slack waiting on you (omit if nothing urgent)
 
-## Eval
+Keep bullets tight. No filler. If a tool returns nothing for a section, say so in one line.
 
-Before sending the Slack notification, verify:
+## 7. Optional — save or notify
 
-1. Today's section exists in the weekly note and Focus/Agenda are not still HTML comment placeholders
-2. If 1:1s were detected on the calendar, at least one prep card is present in the output
-3. The git commit for today was created
+Only if the user asks:
+- **Save it:** write the briefing to a markdown file they name.
+- **Notify:** send the briefing to themselves as a Slack DM.
 
-If any check fails, append `⚠️ Eval: [specific failure]` to the Slack message body.
+By default, just show the briefing in the conversation and stop.
 
-## Send Slack notification
+## If a tool fails
 
-Send a Slack message to channel `${SLACK_DM_CHANNEL}` (personal DM) only. Do not send to any other channel or user under any circumstances.
-
-The session name was provided in the prompt — use it exactly as given in the resume command.
-
-```
-**Morning Briefing** is ready
-<obsidian://open?vault=vault&file=weekly/[MONDAY-DATE]|Open in Obsidian>
-Resume: `claude --resume [SESSION_NAME]`
-```
-
-Where `[MONDAY-DATE]` is the Monday date of this week (the weekly note filename, YYYY-MM-DD) and `[SESSION_NAME]` is the session name from the prompt.
+If Outlook, Granola, or Slack errors out, skip that section, note it in one line, and finish the rest. Never block the whole briefing on one tool.

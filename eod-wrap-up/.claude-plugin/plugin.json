@@ -1,7 +1,7 @@
 {
   "name": "eod-wrap-up",
   "version": "0.1.0",
-  "description": "End-of-day review across Granola, email, Slack, and calendar. Updates the weekly note with meeting notes and action items.",
+  "description": "End-of-day review across Granola meetings, Outlook email, Slack, and tomorrow's calendar. Fully self-contained: no other skills, config, or vault required.",
   "author": {
     "name": "Mike Kovacevic",
     "url": "https://github.com/mikekovacevic"
