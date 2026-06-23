@@ -1,7 +1,7 @@
 {
   "name": "eod-wrap-up",
   "version": "0.1.0",
-  "description": "End-of-day review across Granola meetings, Outlook email, Slack, and tomorrow's calendar. Fully self-contained: no other skills, config, or vault required.",
+  "description": "End-of-day review across Granola meetings, Outlook email, Slack, and tomorrow's calendar. Needs no other skills, config, or vault.",
   "author": {
     "name": "Mike Kovacevic",
     "url": "https://github.com/mikekovacevic"

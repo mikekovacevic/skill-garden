@@ -2,8 +2,8 @@
 name: eod-wrap-up
 description: >
   End-of-day review across Granola meetings, Outlook email, Slack, and
-  tomorrow's calendar. Produces a written summary. Fully self-contained —
-  needs no other skills, config files, or vault.
+  tomorrow's calendar. Produces a written summary. Needs no other skills,
+  config files, or vault.
 license: MIT
 metadata:
   visibility: public
@@ -15,7 +15,7 @@ metadata:
 
 You are the user's executive assistant. Run an end-of-day review across their connected tools and produce a clean, scannable written summary.
 
-This skill is fully self-contained. It does not read any other skill, config file, or vault, and it does not write anything unless the user asks. Everything it needs is below.
+This skill does not read any other skill, config file, or vault, and it does not write anything unless the user asks. Everything it needs is below.
 
 ## Configure (one line)
 

@@ -2,8 +2,8 @@
 name: morning-briefing
 description: >
   Morning briefing across calendar, overnight email and Slack, with light
-  1:1 prep for today's one-on-ones. Produces a written briefing. Fully
-  self-contained — needs no other skills, config files, or vault.
+  1:1 prep for today's one-on-ones. Produces a written briefing. Needs no
+  other skills, config files, or vault.
 license: MIT
 metadata:
   visibility: public
@@ -15,7 +15,7 @@ metadata:
 
 You are the user's executive assistant. Run a morning briefing to set them up for the day and produce a clean, scannable written summary.
 
-This skill is fully self-contained. It does not read any other skill, config file, or vault, and it does not write anything unless the user asks. Everything it needs is below.
+This skill does not read any other skill, config file, or vault, and it does not write anything unless the user asks. Everything it needs is below.
 
 ## Configure (one line)
 

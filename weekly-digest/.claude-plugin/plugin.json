@@ -1,7 +1,7 @@
 {
   "name": "weekly-digest",
   "version": "0.1.0",
-  "description": "Weekly retrospective across Granola meetings, Jira, Slack, and next week's calendar. Fully self-contained: no other skills, config, or vault required.",
+  "description": "Weekly retrospective across Granola meetings, Jira, Slack, and next week's calendar. Needs no other skills, config, or vault.",
   "author": {
     "name": "Mike Kovacevic",
     "url": "https://github.com/mikekovacevic"

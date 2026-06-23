@@ -30,7 +30,7 @@
     {
       "name": "eod-wrap-up",
       "source": "./eod-wrap-up",
-      "description": "End-of-day review across Granola meetings, Outlook email, Slack, and tomorrow's calendar. Fully self-contained: no other skills, config, or vault required.",
+      "description": "End-of-day review across Granola meetings, Outlook email, Slack, and tomorrow's calendar. Needs no other skills, config, or vault.",
       "category": "productivity"
     },
     {
@@ -48,7 +48,7 @@
     {
       "name": "morning-briefing",
       "source": "./morning-briefing",
-      "description": "Morning briefing across calendar, overnight email and Slack, with light 1:1 prep. Fully self-contained: no other skills, config, or vault required.",
+      "description": "Morning briefing across calendar, overnight email and Slack, with light 1:1 prep. Needs no other skills, config, or vault.",
       "category": "productivity"
     },
     {
@@ -84,7 +84,7 @@
     {
       "name": "weekly-digest",
       "source": "./weekly-digest",
-      "description": "Weekly retrospective across Granola meetings, Jira, Slack, and next week's calendar. Fully self-contained: no other skills, config, or vault required.",
+      "description": "Weekly retrospective across Granola meetings, Jira, Slack, and next week's calendar. Needs no other skills, config, or vault.",
       "category": "productivity"
     },
     {

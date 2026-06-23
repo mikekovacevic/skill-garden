@@ -1,7 +1,7 @@
 {
   "name": "morning-briefing",
   "version": "0.1.0",
-  "description": "Morning briefing across calendar, overnight email and Slack, with light 1:1 prep. Fully self-contained: no other skills, config, or vault required.",
+  "description": "Morning briefing across calendar, overnight email and Slack, with light 1:1 prep. Needs no other skills, config, or vault.",
   "author": {
     "name": "Mike Kovacevic",
     "url": "https://github.com/mikekovacevic"
