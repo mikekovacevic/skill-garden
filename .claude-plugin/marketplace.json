@@ -84,7 +84,7 @@
     {
       "name": "weekly-digest",
       "source": "./weekly-digest",
-      "description": "Weekly summary across Granola meetings, Jira, Slack, and calendar. Writes a retrospective to the weekly note.",
+      "description": "Weekly retrospective across Granola meetings, Jira, Slack, and next week's calendar. Fully self-contained: no other skills, config, or vault required.",
       "category": "productivity"
     },
     {

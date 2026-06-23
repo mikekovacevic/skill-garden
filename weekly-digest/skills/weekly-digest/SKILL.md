@@ -1,8 +1,9 @@
 ---
 name: weekly-digest
 description: >
-  Weekly summary across Granola meetings, Jira, Slack, and calendar.
-  Writes a retrospective to the weekly note.
+  Weekly retrospective across Granola meetings, Jira, Slack, and next
+  week's calendar. Produces a written digest. Fully self-contained —
+  needs no other skills, config files, or vault.
 license: MIT
 metadata:
   visibility: public
@@ -12,96 +13,59 @@ metadata:
 
 # Weekly Digest
 
-You are the user's executive assistant. Run a comprehensive weekly summary across all connected tools and write the retrospective to the weekly note.
+You are the user's executive assistant. Run a comprehensive weekly review across their connected tools and produce a clean, scannable retrospective.
 
-## Before starting
+This skill is fully self-contained. It does not read any other skill, config file, or vault, and it does not write anything unless the user asks. Everything it needs is below.
 
-Read the following reference files:
-- config/user-context.md
-- obsidian-vault/SKILL.md
+## Configure (one line)
 
-## Meetings this week
+- **Your name:** `Your Name` — used only to identify the items and Jira issues that are yours. Set this to your own name before running.
 
-Query Granola for this week's meetings. Summarize key decisions and recurring themes across the week.
+## 1. Meetings this week
 
-## Action item audit
+Query Granola for this week's meetings. Summarize key decisions and recurring themes across the week — what kept coming up, not a meeting-by-meeting dump.
 
-Review the weekly note for all action items across the week. Flag what's done vs still open. Identify anything that was missed or should carry forward to next week.
+## 2. Jira status
 
-## Jira status
+List the Jira issues you own. Highlight anything overdue, blocked, or at risk.
 
-List all Jira issues you own. Highlight anything overdue, blocked, or at risk.
+## 3. Unresolved Slack threads
 
-## Unresolved Slack threads
+Find Slack threads from this week where you're involved but haven't replied or closed the loop. Flag anything still waiting on you.
 
-Find any Slack threads from this week where you are involved but haven't replied or closed the loop.
+## 4. Next week prep
 
-## Next week prep
+Check Outlook calendar for Monday's meetings and surface any prep worth doing before the week starts.
 
-Check Outlook calendar for Monday's meetings and surface any prep you should do before the week starts.
+## 5. Build the retrospective
 
-## Project gap scan
+From everything above, write a short retrospective with these four sections (2-4 bullets each, only genuinely notable items):
 
-Read `${VAULT_ROOT}/projects/_index.md`. Compare the recurring themes and topics surfaced in this week's meetings against the active projects list. If any significant topic came up multiple times this week that isn't already tracked as a project, flag it as a candidate for a new project context — include the topic and a one-line rationale. If nothing new stands out, omit this section.
+- **Wins** — key accomplishments and progress this week
+- **Carried forward** — open items that need attention next week
+- **Key decisions** — important decisions made this week and their context
+- **Notes** — anything else worth remembering about this week
 
-## Write the Weekly Retrospective
-
-Insert a new `## Weekly Retrospective` section at the top of the weekly note, immediately after the `# Week of` heading line. Do not look for a placeholder — just prepend it. The section should look like:
-
-```
-## Weekly Retrospective
-
-### Wins
-- Key accomplishments and progress this week
-
-### Carried Forward
-- Open items that need attention next week
-
-### Key Decisions
-- Important decisions made this week and their context
-
-### Notes
-- Anything else worth remembering about this week
-```
-
-Keep each section to 2-4 bullets max. Be concise and factual. Only include genuinely notable items, not every small task.
-
-## Commit to git
-
-Commit vault changes per the git convention in obsidian-vault.md.
-
-## Present the weekly digest
+## 6. Present the digest
 
 Output a scannable summary:
+
 - **Meetings this week** — key decisions, recurring themes
-- **Action items** — done vs open, anything overdue
 - **Jira** — status of owned issues, blockers, risks
 - **Slack** — unresolved threads that need attention
 - **Next week** — Monday meetings, prep needed
+- **Retrospective** — the Wins / Carried forward / Key decisions / Notes from step 5
 
-End with a short "Week in review" paragraph you could use as a standup update.
-- **Potential new projects** — recurring topics this week not yet tracked in _index.md (omit section if none)
+End with a short "Week in review" paragraph you could paste straight into a standup update.
 
-## Eval
+## 7. Optional — save or notify
 
-Before sending the Slack notification, verify:
+Only if the user asks:
+- **Save it:** write the digest to a markdown file they name.
+- **Notify:** send the digest to themselves as a Slack DM.
 
-1. The Weekly Retrospective section exists in the weekly note immediately after the `# Week of` heading
-2. All four subsections (Wins, Carried Forward, Key Decisions, Notes) each have at least one bullet
-3. The git commit for today was created
+By default, just show the digest in the conversation and stop.
 
-If any check fails, append `⚠️ Eval: [specific failure]` to the Slack message body.
+## If a tool fails
 
-## Send Slack notification
-
-Send a Slack message to channel `${SLACK_DM_CHANNEL}` (personal DM) only. Do not send to any other channel or user under any circumstances.
-
-The session name was provided in the prompt — use it exactly as given in the resume command.
-
-```
-**Weekly Digest** is ready
-<obsidian://open?vault=vault&file=weekly/[MONDAY-DATE]|Open in Obsidian>
-Resume: `claude --resume [SESSION_NAME]`
-```
-
-Where `[MONDAY-DATE]` is the Monday date of this week (the weekly note filename, YYYY-MM-DD) and `[SESSION_NAME]` is the session name from the prompt.
+If Granola, Jira, Outlook, or Slack errors out, skip that section, note it in one line, and finish the rest. Never block the whole digest on one tool.
